@@ -1,23 +1,232 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
+:root {
+  --swiss-black: #000000;
+  --swiss-white: #ffffff;
+  --swiss-gray: #666666;
+  --swiss-light-gray: #e5e5e5;
+  --swiss-border: 2px;
+}
 
-.heroBanner {
-  padding: 4rem 0;
-  text-align: center;
+.hero {
   position: relative;
-  overflow: hidden;
-}
-
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
-  }
-}
-
-.buttons {
+  min-height: 75vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  background: var(--swiss-black);
+  border-bottom: var(--swiss-border) solid var(--swiss-white);
+}
+
+.shader {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 0.15;
+  mix-blend-mode: overlay;
+}
+
+.heroInner {
+  position: relative;
+  text-align: left;
+  padding: 4rem 2rem;
+  max-width: 1400px;
+  width: 100%;
+  z-index: 1;
+  border: var(--swiss-border) solid var(--swiss-white);
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.title {
+  font-size: clamp(3rem, 8vw, 7rem);
+  line-height: 0.95;
+  margin: 0 0 2rem;
+  color: var(--swiss-white);
+  letter-spacing: -0.04em;
+  font-weight: 900;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+
+.title > * {
+  display: block;
+}
+
+.title > :first-child {
+  animation: slideUpFirst 0.8s ease-out;
+}
+
+.gradient {
+  display: block;
+  color: var(--swiss-white);
+  border-left: 8px solid var(--swiss-white);
+  padding-left: 1rem;
+  margin-top: 1rem;
+  animation: slideUpSecond 0.8s ease-out 0.3s backwards;
+}
+
+@keyframes slideUpFirst {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUpSecond {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.subtitle {
+  color: var(--swiss-light-gray);
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  margin: 0 0 3rem;
+  max-width: 700px;
+  line-height: 1.4;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+.ctaRow {
+  display: flex;
+  gap: 0;
+  flex-wrap: wrap;
+}
+
+.ctaRow :global(.button) {
+  border-radius: 0 !important;
+  border: var(--swiss-border) solid var(--swiss-white) !important;
+  padding: 1.2rem 3rem !important;
+  font-weight: 700 !important;
+  font-size: 1rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  transition: all 0.2s ease !important;
+}
+
+.ctaRow :global(.button--primary) {
+  background: var(--swiss-white) !important;
+  color: var(--swiss-black) !important;
+}
+
+.ctaRow :global(.button--primary:hover) {
+  background: var(--swiss-black) !important;
+  color: var(--swiss-white) !important;
+}
+
+.ctaRow :global(.button--secondary) {
+  background: transparent !important;
+  color: var(--swiss-white) !important;
+  margin-left: -2px;
+}
+
+.ctaRow :global(.button--secondary:hover) {
+  background: var(--swiss-white) !important;
+  color: var(--swiss-black) !important;
+}
+
+.main {
+  padding: 0;
+  background: var(--swiss-white);
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  max-width: 100%;
+  margin: 0;
+}
+
+.card {
+  background: var(--swiss-white);
+  border: var(--swiss-border) solid var(--swiss-black);
+  border-radius: 0;
+  padding: 4rem 2.5rem;
+  color: var(--swiss-black);
+  box-shadow: none;
+  transition: all 0.3s ease;
+  margin: -1px -1px 0 0;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.card:hover {
+  background: var(--swiss-black);
+  color: var(--swiss-white);
+  z-index: 1;
+}
+
+.card h3 {
+  font-size: 2rem;
+  font-weight: 900;
+  margin: 0 0 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.card p {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  line-height: 1.6;
+  margin: 0;
+  font-weight: 400;
+}
+
+@media (max-width: 996px) {
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .heroInner {
+    padding: 3rem 1.5rem;
+  }
+
+  .card {
+    min-height: 200px;
+  }
+}
+
+.code {
+  max-width: 100%;
+  margin: 0;
+  padding: 5rem 2rem;
+  background: var(--swiss-light-gray);
+  border-top: var(--swiss-border) solid var(--swiss-black);
+  border-bottom: var(--swiss-border) solid var(--swiss-black);
+}
+
+.code h2 {
+  font-size: 3rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  margin: 0 0 2rem;
+  color: var(--swiss-black);
+}
+
+.codeBlock {
+  background: var(--swiss-black);
+  color: var(--swiss-white);
+  border: var(--swiss-border) solid var(--swiss-black);
+  border-radius: 0;
+  padding: 2rem;
+  overflow: auto;
+  font-family: 'Courier New', monospace;
+  font-size: 1rem;
+  text-align: left;
+  max-width: 1200px;
+  margin: 0 auto;
 }

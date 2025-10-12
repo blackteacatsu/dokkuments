@@ -89,7 +89,7 @@ const config = {
         title: 'Amazon HydroViewer',
         logo: {
           alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          src: 'img/university.shield.blue.svg',
         },
         items: [
           {
@@ -153,10 +153,15 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} The Amazon Hydrometeorology Tool. Made with &#128151 on &#127758 ! `, // Built with Docusaurus. 
+        copyright: `Built with Docusaurus. Copyright © ${new Date().getFullYear()} The Amazon Hydrometeorology Tool. Made with &#128151 on &#127758 ! `, // 
       },
       mermaid:{
-        theme: {light: "forest", dark: "dark"},
+        theme: {light: "neutral", dark: "dark"}
+      },
+      colorMode: {
+        defaultMode: 'light',
+        disableSwitch: false,
+        respectPrefersColorScheme: false,
       },
       prism: {
         theme: prismThemes.github,
