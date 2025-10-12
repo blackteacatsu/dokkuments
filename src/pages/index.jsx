@@ -139,7 +139,7 @@ export default function Home() {
             </Link>
             <Link
               className="button button--secondary button--lg"
-              to="/docs/intro"
+              to="/docs/tutorial-getting%20started/First%20step"
             >
               Documentation
             </Link>
