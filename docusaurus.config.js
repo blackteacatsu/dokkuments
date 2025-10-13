@@ -90,6 +90,7 @@ const config = {
         logo: {
           alt: 'My Site Logo',
           src: 'img/university.shield.blue.svg',
+          srcDark: 'img/university.shield.white.png',
         },
         items: [
           {
@@ -156,7 +157,7 @@ const config = {
         copyright: `Built with Docusaurus. Copyright © ${new Date().getFullYear()} The Amazon Hydrometeorology Tool. Made with &#128151 on &#127758 ! `, // 
       },
       mermaid:{
-        theme: {light: "neutral", dark: "dark"}
+        layout:'elk', theme: {light: "neutral", dark: "dark"},
       },
       colorMode: {
         defaultMode: 'light',

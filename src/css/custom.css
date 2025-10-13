@@ -54,7 +54,7 @@
 
   /* Code blocks */
   --ifm-code-font-size: 95%;
-  --ifm-code-background: #000000;
+  --ifm-code-background: #eeff2e89;
   --ifm-code-color: #ffffff;
   --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.1);
 }
@@ -75,7 +75,16 @@
 
   --ifm-code-background: #ffffff;
   --ifm-code-color: #000000;
+  --ifm-font-color-base: #ffffff;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  /* Link colors */
+  --ifm-link-color: #ffffff;
+  --ifm-link-hover-color: #cccccc;
+
+  /* Menu/Highlight colors */
+  --ifm-menu-color-active: #ffffff;
+  --ifm-menu-color-background-active: #1a1a1a;
 }
 
 /* Global Typography Styles */
