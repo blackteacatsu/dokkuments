@@ -157,7 +157,12 @@ const config = {
         copyright: `Built with Docusaurus. Copyright © ${new Date().getFullYear()} The Amazon Hydrometeorology Tool. Made with &#128151 on &#127758 ! `, // 
       },
       mermaid:{
-        layout:'elk', theme: {light: "neutral", dark: "dark"},
+        theme: {light: "neutral", dark: "dark"},
+        options: {
+          flowchart: {
+            defaultRenderer: 'elk',
+          },
+        },
       },
       colorMode: {
         defaultMode: 'light',

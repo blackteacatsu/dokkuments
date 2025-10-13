@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import styles from './Marquee.module.css';
 
-export default function Marquee({ speed = 0.4 }) {
+export default function Marquee({ speed = 1 }) {
   const marqueeRef = useRef(null);
   const animationRef = useRef(null);
 
@@ -19,7 +19,7 @@ export default function Marquee({ speed = 0.4 }) {
     let position = 0;
 
     const animate = () => {
-      position += speed;
+      position += speed; // Adjust speed here
       if (position > firstElement.clientWidth) {
         position = 0;
       }
