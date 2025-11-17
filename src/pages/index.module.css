@@ -213,20 +213,18 @@
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: -0.02em;
-  margin: 0 0 2rem;
+  margin: 0 0 3rem;
   color: var(--swiss-black);
+  text-align: center;
 }
 
-.codeBlock {
-  background: var(--swiss-black);
-  color: var(--swiss-white);
-  border: var(--swiss-border) solid var(--swiss-black);
-  border-radius: 0;
-  padding: 2rem;
-  overflow: auto;
-  font-family: 'Courier New', monospace;
-  font-size: 1rem;
-  text-align: left;
-  max-width: 1200px;
-  margin: 0 auto;
+@media (max-width: 768px) {
+  .code {
+    padding: 3rem 1rem;
+  }
+
+  .code h2 {
+    font-size: 2rem;
+    margin: 0 0 2rem;
+  }
 }

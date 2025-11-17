@@ -1,0 +1,204 @@
+.codeBlockWrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.tab {
+  background: rgba(0, 0, 0, 0.05);
+  border: 2px solid transparent;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #444;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: none;
+  letter-spacing: 0.01em;
+}
+
+.tab:hover {
+  background: rgba(0, 0, 0, 0.08);
+  color: #000;
+}
+
+.tabActive {
+  background: var(--swiss-white) !important;
+  border-color: var(--swiss-black) !important;
+  color: var(--swiss-black) !important;
+  font-weight: 700;
+}
+
+.codeBlockContainer {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border: 2px solid var(--swiss-black);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  position: relative;
+  padding: 2rem;
+}
+
+.commandList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.commandRow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.comment {
+  color: #6b7280;
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.command {
+  color: #1f2937;
+  font-family: 'Sans Mono', monospace;
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  display: block;
+  line-height: 1.6;
+  word-break: break-all;
+}
+
+.command .keyword {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+.command .url {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.command .flag {
+  color: #7c3aed;
+  font-weight: 600;
+}
+
+.command .string {
+  color: #059669;
+}
+
+.copyButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--swiss-black);
+  border: 2px solid var(--swiss-black);
+  border-radius: 8px;
+  color: var(--swiss-white);
+  cursor: pointer;
+  padding: 0.65rem 1.2rem;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0.01em;
+}
+
+.copyButton:hover {
+  background: var(--swiss-white);
+  color: var(--swiss-black);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.copyButton:active {
+  transform: translateY(0);
+}
+
+.copyButton svg {
+  width: 18px;
+  height: 18px;
+}
+
+.copyButton span {
+  font-family: inherit;
+}
+
+.repoButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: var(--swiss-black);
+  border: 2px solid var(--swiss-black);
+  border-radius: 8px;
+  color: var(--swiss-white);
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.repoButton:hover {
+  background: var(--swiss-white);
+  color: var(--swiss-black);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.repoButton:active {
+  transform: translateY(0);
+}
+
+.repoButton svg {
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 768px) {
+  .tabs {
+    gap: 0.25rem;
+  }
+
+  .tab {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .codeBlockContainer {
+    padding: 1.5rem 1rem 1rem;
+    border-radius: 8px;
+  }
+
+  .command {
+    font-size: 0.9rem;
+  }
+
+  .comment {
+    font-size: 0.8rem;
+  }
+
+  .copyButton {
+    position: static;
+    width: 100%;
+    margin-top: 1rem;
+  }
+}

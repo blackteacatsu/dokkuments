@@ -4,6 +4,7 @@ import Link from '@docusaurus/Link';
 import styles from './index.module.css';
 import P5Background from '../components/P5Background';
 import Marquee from '../components/Marquee';
+import CodeBlock from '../components/CodeBlock';
 
 function ShaderBackground() {
   const canvasRef = useRef(null);
@@ -167,17 +168,32 @@ export default function Home() {
 
         <section className={styles.code}>
           <h2>Quick Start</h2>
-          <pre className={styles.codeBlock}>
-{`# Clone the repository
-git clone https://github.com/yourusername/AmazonHydroViewer.git
-cd AmazonHydroViewer
-
-#Install dependencies
-pip install -r requirements.txt
-
-#Run the application
-shiny run app.py`}
-          </pre>
+          <CodeBlock
+            tabs={[
+              {
+                label: 'Clone from Repository',
+                commands: [
+                  {
+                    comment: '# Clone the repository',
+                    code: 'git clone https://github.com/blackteacatsu/AmazonHydroViewer.git'
+                  },
+                  {
+                    comment: '# Navigate to directory',
+                    code: 'cd AmazonHydroViewer'
+                  },
+                  {
+                    comment: '# Install dependencies',
+                    code: 'pip install -r requirements.txt'
+                  },
+                  {
+                    comment: '# Run the application',
+                    code: 'shiny run app.py'
+                  }
+                ]
+              }
+            ]}
+            repoLink="https://github.com/blackteacatsu/AmazonHydroViewer"
+          />
         </section>
       </main>
     </Layout>
