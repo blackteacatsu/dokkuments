@@ -115,6 +115,8 @@ function ShaderBackground() {
 }
 
 export default function Home() {
+  const quickStartText = 'Request your tiles today';
+
   return (
     <Layout
       title="Amazon HydroViewer"
@@ -147,6 +149,7 @@ export default function Home() {
           </div>
         </div>
       </header>
+      <Marquee variant="text" speed={0.5} />
 
       <main className={styles.main}>
         <section className={styles.features}>
@@ -163,34 +166,49 @@ export default function Home() {
             <p>Open-source platform designed for researchers, policymakers, and communities.</p>
           </div>
         </section>
-
-        <Marquee speed={0.4} />
+        <Marquee variant="logos" speed={0.7} />
 
         <section className={styles.code}>
-          <h2>Quick Start</h2>
+          <h2 className={styles.quickStartTitle}>
+            <span style={{'--title-ch': `${quickStartText.length}ch`, '--title-steps': quickStartText.length}}>
+              {quickStartText}
+            </span>
+          </h2>
           <CodeBlock
             tabs={[
               {
-                label: 'Clone from Repository',
+                label: 'JavaScript',
                 commands: [
                   {
-                    comment: '# Clone the repository',
-                    code: 'git clone https://github.com/blackteacatsu/AmazonHydroViewer.git'
+                    comment: '// HydroViewer TileLayer request (JavaScript)',
+                    code: 'L.tileLayer("https://amazonhydroviewer.onrender.com/tiles/Rainf_tavg/0/0/{z}/{x}/{y}.png",'
                   },
                   {
-                    comment: '# Navigate to directory',
-                    code: 'cd AmazonHydroViewer'
-                  },
-                  {
-                    comment: '# Install dependencies',
-                    code: 'pip install -r requirements.txt'
-                  },
-                  {
-                    comment: '# Run the application',
-                    code: 'shiny run app.py'
+                    code: '  {opacity: 0.85, tms: true, minNativeZoom: 4, maxNativeZoom: 9}).addTo(map)'
                   }
                 ]
-              }
+              },
+              {
+                label: 'IPyLeaflet',
+                commands: [
+                  {
+                    comment: '# Using ipyleaflet package',
+                    code: 'from ipyleaflet import Map, basemaps, basemap_to_tiles'
+                  },
+                  {
+                    code: 'm = Map(center=(-7, -66), zoom=5)'
+                  },
+                  {
+                    code: 'tile_url = "https://amazonhydroviewer.onrender.com/tiles/Rainf_tavg/0/0/{z}/{x}/{y}.png"'
+                  },
+                  {
+                    code: 'ldas=Tilelayer(url=tile_url)'
+                  },
+                  {
+                    code: "m.add(ldas)"
+                  },
+                ]
+              },
             ]}
             repoLink="https://github.com/blackteacatsu/AmazonHydroViewer"
           />

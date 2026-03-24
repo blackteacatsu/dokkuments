@@ -109,21 +109,22 @@ h1, h2, h3, h4, h5, h6 {
 
 .navbar__logo {
   height: 3rem;
-  margin-left: 0.75rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .navbar__title {
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: -0.02em;
-  font-size: 1.2rem;
+  font-size: 2rem;
 }
 
 .navbar__link {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
 }
 
 /* Buttons - Brutalist style */

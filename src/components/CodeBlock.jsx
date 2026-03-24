@@ -35,6 +35,15 @@ export default function CodeBlock({ tabs, repoLink }) {
       )}
 
       <div className={styles.codeBlockContainer}>
+        <div className={styles.terminalBar}>
+          <div className={styles.lights} aria-hidden="true">
+            <span className={`${styles.light} ${styles.red}`} />
+            <span className={`${styles.light} ${styles.yellow}`} />
+            <span className={`${styles.light} ${styles.green}`} />
+          </div>
+          <span className={styles.path}>~/index</span>
+        </div>
+
         <div className={styles.commandList}>
           {currentTab.commands.map((cmd, index) => (
             <div key={index} className={styles.commandRow}>

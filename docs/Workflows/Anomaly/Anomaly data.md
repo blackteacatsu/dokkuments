@@ -30,7 +30,7 @@ We want to calculate monthly anomaly data for a list of variables stored togethe
 ### Setup
 
 Go ahead and open a new python script or Jupyter Notebook, and start code setup,
-```python title="main.py"
+```python 
 import xarray as xr
 import os
 
