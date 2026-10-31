@@ -7,6 +7,7 @@
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import {themes as prismThemes} from 'prism-react-renderer';
+import tailwindcss from '@tailwindcss/postcss';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -24,16 +25,27 @@ const config = {
     mermaid: true,
   },
   themes: ['@docusaurus/theme-mermaid'],
+  plugins: [
+    function tailwindPlugin() {
+      return {
+        name: 'tailwindcss',
+        configurePostCss(postcssOptions) {
+          postcssOptions.plugins.push(tailwindcss());
+          return postcssOptions;
+        },
+      };
+    },
+  ],
 
   title: 'Dokkumentation Page for Hydrometeorology Tools',
   tagline: 'Created in Baltimore, Maryland',
   favicon: 'img/university_shield_blue.ico',
 
   // Set the production url of your site here
-  url: 'https://github.com',
+  url: 'https://docs.hydroc.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/dokkuments/',
+  baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -115,7 +127,7 @@ const config = {
             items: [
               {
                 label: 'Tutorial',
-                to: '/docs/category/tutorial---getting-started',
+                to: '/docs/category/getting-started',
               },
               {
                 label: 'Documentations',
